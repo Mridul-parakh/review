@@ -30,7 +30,9 @@ mongoose.connect(db.mongoURI,{
 
     app.use(authRoutes); 
  
-    
+app.get('/',(req,res)=>{
+  res.send("hello");
+})
 
     const PORT=process.env.PORT||5000;
 
