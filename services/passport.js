@@ -4,7 +4,7 @@ const keys=require('../config/keys');
 const User=require('../models/Users');
 
 passport.serializeUser((user,done)=>{
-  console.log(user.id);
+  //console.log(user.id);
   done(null,user.id);
 });
 
