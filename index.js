@@ -32,9 +32,7 @@ mongoose.connect(db.mongoURI,{
     app.use(authRoutes);
     app.use(billingRoutes); 
  
-app.get('/',(req,res)=>{
-  res.send("hello");
-})
+
 
 if(process.env.NODE_ENV=='production'){
   app.use(express.static('client/build'));
