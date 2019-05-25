@@ -8,8 +8,10 @@ const db=require('./config/keys');
 
 const authRoutes=require('./routes/authRoutes');
 const billingRoutes=require('./routes/billingRoutes');
+const surveyRoutes=require('./routes/surveyRoutes');
 require('./services/passport');
 require('./models/Users');
+require('./models/Survey');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -31,7 +33,7 @@ mongoose.connect(db.mongoURI,{
 
     app.use(authRoutes);
     app.use(billingRoutes); 
- 
+    app.use(surveyRoutes);
 
 
 if(process.env.NODE_ENV=='production'){
